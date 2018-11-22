@@ -23,7 +23,10 @@ namespace WebApiPaises.Controllers
         [HttpGet]
         public IEnumerable<Pais> Get()
         {
-            return context.Paises.ToList();
+            //return context.Paises.ToList();
+
+            return context.Paises.Include(p => p.Provincias).ToList();
+
         }
 
         [HttpGet("{id}", Name ="paisCreado")]
