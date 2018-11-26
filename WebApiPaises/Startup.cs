@@ -56,11 +56,18 @@ namespace WebApiPaises
                            new Provincia () {Nombre="Cordova"},
                            new Provincia () {Nombre="Buenos aires"}
                        }
+                   },
+
+
+                    new Pais(){ Nombre="Colombia", Provincias = new List<Provincia>()
+                        //{
+                        //    new Provincia () {Nombre="Cordova"},
+                        //    new Provincia () {Nombre="Buenos aires"}
+                        //}
                    }
 
-
                 }
-                   
+
                 );
 
                 context.SaveChanges();

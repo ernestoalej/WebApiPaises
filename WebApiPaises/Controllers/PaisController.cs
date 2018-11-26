@@ -23,16 +23,16 @@ namespace WebApiPaises.Controllers
         [HttpGet]
         public IEnumerable<Pais> Get()
         {
-            //return context.Paises.ToList();
-
-            return context.Paises.Include(p => p.Provincias).ToList();
-
+            return context.Paises.ToList();
+           
         }
 
         [HttpGet("{id}", Name ="paisCreado")]
         public IActionResult GetById(int id)
         {
-            var pais = context.Paises.FirstOrDefault(p => p.Id == id);
+            //var pais = context.Paises.FirstOrDefault(p => p.Id == id);
+
+           var pais = context.Paises.Include(p => p.Provincias).FirstOrDefault(p => p.Id == id);         
 
             if (pais == null)
             {

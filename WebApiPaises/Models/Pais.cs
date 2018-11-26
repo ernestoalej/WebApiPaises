@@ -15,5 +15,10 @@ namespace WebApiPaises.Models
 
         public List<Provincia> Provincias { get; set; }
 
+        public Pais()
+        {
+            Provincias = new List<Provincia>();
+        }
+
     }
 }
